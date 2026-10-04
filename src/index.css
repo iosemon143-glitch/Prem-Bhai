@@ -1,0 +1,91 @@
+@import "tailwindcss";
+
+:root {
+  --bg-base: #f8fafc;
+  --daraz-orange: #f85606;
+  --daraz-flame: #ff5b14;
+  --daraz-red: #ff3b30;
+  --glass-bg: rgba(255, 255, 255, 0.72);
+  --glass-card: rgba(255, 255, 255, 0.88);
+  --glass-border: rgba(255, 255, 255, 0.95);
+  --glass-shadow: 0 25px 50px -12px rgba(248, 86, 6, 0.08), 0 4px 16px rgba(0, 0, 0, 0.03);
+  --glass-shadow-hover: 0 35px 70px -15px rgba(248, 86, 6, 0.22), 0 10px 25px rgba(0, 0, 0, 0.06);
+  --radius-xl: 28px;
+  --radius-lg: 20px;
+  --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Ambient iPhone Liquid Glass Background with perfectly balanced warm & cool grading */
+.daraz-liquid-bg {
+  background-color: #f8fafc;
+  background-image: 
+    radial-gradient(circle at 5% 10%, rgba(248, 86, 6, 0.09) 0%, transparent 42%),
+    radial-gradient(circle at 95% 15%, rgba(255, 91, 20, 0.08) 0%, transparent 40%),
+    radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.9) 0%, transparent 70%),
+    radial-gradient(circle at 85% 85%, rgba(248, 86, 6, 0.07) 0%, transparent 45%),
+    radial-gradient(circle at 15% 90%, rgba(94, 92, 230, 0.05) 0%, transparent 40%);
+  background-attachment: fixed;
+}
+
+/* Ultra-Premium iPhone Liquid Glass Surface */
+.ios-glass-nav {
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(28px) saturate(190%);
+  -webkit-backdrop-filter: blur(28px) saturate(190%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.9);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.05);
+}
+
+.ios-glass-card {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.95);
+  box-shadow: var(--glass-shadow);
+  transition: var(--transition-smooth);
+}
+
+.ios-glass-card:hover {
+  transform: translateY(-8px) scale(1.012);
+  background: rgba(255, 255, 255, 0.95);
+  border-color: rgba(248, 86, 6, 0.35);
+  box-shadow: var(--glass-shadow-hover);
+}
+
+/* Liquid Glass Hero Surface */
+.ios-hero-glass {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.85) 0%, rgba(255, 245, 238, 0.75) 100%);
+  backdrop-filter: blur(35px) saturate(200%);
+  -webkit-backdrop-filter: blur(35px) saturate(200%);
+  border: 1px solid rgba(255, 255, 255, 0.95);
+  box-shadow: 0 30px 60px -15px rgba(248, 86, 6, 0.12), 0 0 0 1px rgba(255, 255, 255, 0.8);
+}
+
+/* Shimmer Sheen effect for badges & buttons */
+@keyframes glassShimmer {
+  0% { transform: translateX(-150%); }
+  50%, 100% { transform: translateX(150%); }
+}
+
+.animate-shimmer {
+  position: relative;
+  overflow: hidden;
+}
+
+.animate-shimmer::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  animation: glassShimmer 4s infinite cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Pulse animation for live indicators */
+@keyframes flamePulse {
+  0%, 100% { transform: scale(1); filter: drop-shadow(0 0 0 rgba(248, 86, 6, 0)); }
+  50% { transform: scale(1.15); filter: drop-shadow(0 0 10px rgba(248, 86, 6, 0.5)); }
+}
+
+.animate-flame {
+  animation: flamePulse 2s infinite ease-in-out;
+}

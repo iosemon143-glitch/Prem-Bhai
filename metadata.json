@@ -1,0 +1,6 @@
+{
+  "name": "SiteCraft Studio - Website Maker & Creator",
+  "description": "Modern live website builder, visual editor, and multi-template showcase in Bengali and English. Customize, preview, and export responsive websites.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
